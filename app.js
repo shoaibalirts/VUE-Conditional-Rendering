@@ -11,6 +11,12 @@ const app = Vue.createApp({
       console.log(this.goals);
       this.inputGoal = "";
     },
+    removeGoal(availableGoal) {
+      this.goals = this.goals.filter((goal) => {
+        return availableGoal !== goal;
+      });
+      console.log(this.goals);
+    },
   },
 });
 
