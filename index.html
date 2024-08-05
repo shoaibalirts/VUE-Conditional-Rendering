@@ -24,8 +24,11 @@
         No goals have been added yet - please start adding some!
       </p>
       <ul v-show="goals.length > 0">
-        <li v-for="(goal) in goals">
-          <button @click="removeGoal(goal)">{{goal}}</button>
+        <li v-for="(goal) in goals" :key="goal">
+          <button @click="removeGoal(goal)">
+            <p>{{goal}}</p>
+            <input type="text" @click.stop />
+          </button>
         </li>
       </ul>
     </section>
